@@ -22,7 +22,7 @@ async function countingUpdate(el) {
 
     await new Promise(res => setTimeout(() => res(), delay));
 
-    for(let i = 0; i < 200; i++) {
+    for(let i = 0; i < frames; i++) {
         await new Promise(resolve => requestAnimationFrame(() => {
             current += step;
             el.innerHTML = Math.round(current);
@@ -30,5 +30,6 @@ async function countingUpdate(el) {
         }));
     }
 
-    el.innerHTML = countTo + '+';
+    // Here you can add custom append and prepend text after animation
+    // el.innerHTML = countTo + '+';
 }
